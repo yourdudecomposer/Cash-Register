@@ -1,9 +1,16 @@
 const btnCount = document.querySelector('button:nth-child(1)'),
     price = document.querySelector('#price'),
-    cash = document.querySelector('#cash');
+    cash = document.querySelector('#cash'),
+    cashIn = document.querySelectorAll('.cid input');
 
-function makeArrayFromCid() {
-    return [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]
+function makeArrayFromCiD() {
+    let cid = [["PENNY"], ["NICKEL"], ["DIME"], ["QUARTER"], ["ONE"], ["FIVE"], ["TEN"], ["TWENTY"], ["ONE HUNDRED"]];
+    cid.map((el, i) => {
+        if (cashIn[i].value === '') {
+            el[1] = 0;
+        } else el[1] = parseFloat(cashIn[i].value)
+    });
+    return cid;
 }
 function checkCashRegister(price, cash, cid) {
     function round(x) {
@@ -49,8 +56,6 @@ function checkCashRegister(price, cash, cid) {
             }
         }
     }
-
-    console.log(ch)
     let st = ""
     for (let i = 0; i < arr.length; i++) {
         if (arr[i][1] !== 0) {
