@@ -10,7 +10,6 @@ function count() {
     let cid = makeArrayFromCiD();
 
     console.log(
-
         checkCashRegister(price.value, cash.value, cid)
     );
 
