@@ -143,6 +143,8 @@ footer button:nth-child(1) {
     height: 10vh;
     font-size: 0.9em;
     border-radius: 10px;
+    pointer-events: none;
+     color: #ccc;
 }
 
 footer button:nth-child(2) {

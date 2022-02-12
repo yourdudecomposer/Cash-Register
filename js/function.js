@@ -1,7 +1,9 @@
 const btnCount = document.querySelector('button:nth-child(1)'),
     price = document.querySelector('#price'),
     cash = document.querySelector('#cash'),
-    cashIn = document.querySelectorAll('.cid input');
+    cashIn = document.querySelectorAll('.cid input'),
+    btnReset = document.querySelector('button:nth-child(2)'),
+    table2 = document.querySelector('.change table:nth-child(2)')
 
 function makeArrayFromCiD() {
     let cid = [["PENNY"], ["NICKEL"], ["DIME"], ["QUARTER"], ["ONE"], ["FIVE"], ["TEN"], ["TWENTY"], ["ONE HUNDRED"]];
@@ -12,12 +14,17 @@ function makeArrayFromCiD() {
     });
     return cid;
 }
+
+
 function checkCashRegister(price, cash, cid) {
+
+
     function round(x) {
         return Number.parseFloat(x).toFixed(2);
     }
     let ch = cash - price,
         arr = [[100, 0, ""], [20, 0, ""], [10, 0, ""], [5, 0, ""], [1, 0, ""], [0.25, 0, ""], [0.1, 0, ""], [0.05, 0, ""], [0.01, 0, ""]]
+
     let obj = {},
         inArr = [],
         outArr = [];
@@ -25,7 +32,6 @@ function checkCashRegister(price, cash, cid) {
         arr[i][1] = cid[arr.length - i - 1][1]
         arr[i][2] = cid[arr.length - i - 1][0]
     }
-
     for (let i = 0; i < arr.length; i++) {
         let name = arr[i][2],
             rest = arr[i][1],
@@ -56,13 +62,16 @@ function checkCashRegister(price, cash, cid) {
             }
         }
     }
-    let st = ""
+    let st = "";
+    console.log(outArr);
     for (let i = 0; i < arr.length; i++) {
         if (arr[i][1] !== 0) {
             st = "OPEN";
             break;
-        } else st = "CLOSED"
+        } else 
+        st = "CLOSED"
         outArr = cid;
+        
     }
     if (ch != 0) {
         st = "INSUFFICIENT_FUNDS";
@@ -72,5 +81,30 @@ function checkCashRegister(price, cash, cid) {
     obj.change = outArr;
     return obj;
 }
+function reset() {
+    for (let i = 0; i < cashIn.length; i++) {
+        cashIn[i].value = '';
+    }
+    price.value = '';
+    cash.value = '';
+    table2.style.display = 'table';
+}
+function checkInput() {
+    if (price.value !== '' && cash.value !== '') {
+        btnCount.style.pointerEvents = 'initial';
+        btnCount.style.color = '#000';
+    } else {
+        btnCount.style.pointerEvents = 'none';
+        btnCount.style.color = '#ccc';
+    }
+}
 
+
+
+function fillTable(a) {
+    console.log(a);
+}
+function notMoney() {
+    table2.style.display = 'none';
+}
 
