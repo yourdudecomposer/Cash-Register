@@ -3,7 +3,8 @@ const btnCount = document.querySelector('button:nth-child(1)'),
     cash = document.querySelector('#cash'),
     cashIn = document.querySelectorAll('.cid input'),
     btnReset = document.querySelector('button:nth-child(2)'),
-    table2 = document.querySelector('.change table:nth-child(2)')
+    table2 = document.querySelector('.change table:nth-child(2)'),
+    classChange = document.querySelector('.change')
 
 
 
@@ -29,7 +30,6 @@ function checkCashRegister(price, cash, cid) {
             } else {
                 st = "CLOSED"
                 outArr = cid;
-                console.log('else');
             }
         }
         if (ch != 0) {
@@ -97,7 +97,9 @@ function reset() {
     }
     price.value = '';
     cash.value = '';
+    checkInput()
     table2.style.display = 'table';
+    notCh.remove()
 }
 function checkInput() {
     if (price.value !== '' && cash.value !== '') {
@@ -115,6 +117,17 @@ function fillTable(a) {
     console.log(a);
 }
 function notMoney() {
-    table2.style.display = 'none';
+    if (table2.style.display !== 'none') {
+        table2.style.display = 'none';
+        let str = "<h2>There is No Change</h2>"
+        notCh = document.createElement('div');
+        notCh.innerHTML = str;
+        notCh.style.display = 'block'
+        notCh.style.position = 'relative'
+
+        notCh.style.top = '25vh'
+        notCh.style.background = 'red'
+        classChange.append(notCh)
+    }
 }
 
