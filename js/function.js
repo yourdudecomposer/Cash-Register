@@ -4,7 +4,16 @@ const btnCount = document.querySelector('button:nth-child(1)'),
     cashIn = document.querySelectorAll('.cid input'),
     btnReset = document.querySelector('button:nth-child(2)'),
     table2 = document.querySelector('.change table:nth-child(2)'),
-    classChange = document.querySelector('.change')
+    classChange = document.querySelector('.change'),
+    body = document.querySelector('body'),
+    changeOut = document.querySelectorAll('.change td:nth-child(2)');
+
+
+for (let i = 0; i < changeOut.length; i++) {
+    let idS = ["PENNY", "NICKEL", "DIME", "QUARTER", "ONE", "FIVE", "TEN", "TWENTY", "ONE HUNDRED"];
+    changeOut[i].id = idS[i]
+}
+
 
 
 
@@ -23,7 +32,6 @@ function checkCashRegister(price, cash, cid) {
         let tArr = outArr;
         for (let i = 0; i < arr.length; i++) {
             if (arr[i][1] !== 0) {
-                console.log(tArr);
                 st = "OPEN";
                 outArr = tArr;
                 break;
@@ -99,9 +107,10 @@ function reset() {
     cash.value = '';
     checkInput()
     table2.style.display = 'table';
-    notCh.remove()
+    if (notCh) console.log(1232132);
 }
 function checkInput() {
+    console.log('load');
     if (price.value !== '' && cash.value !== '') {
         btnCount.style.pointerEvents = 'initial';
         btnCount.style.color = '#000';
@@ -113,9 +122,34 @@ function checkInput() {
 
 
 
+
+
+
 function fillTable(a) {
-    console.log(a);
+    table2.style.display = 'table';
+    for (let i = 0; i < changeOut.length; i++) {
+        for (let k = 0; k < a.length; k++) {
+            if (changeOut[i].id === a[k][0] && a[k][1] !== 0) {
+                changeOut[i].innerHTML = a[k][1];
+            }
+        }
+    }
 }
+
+
+
+function fillTableAndClose(a) {
+    fillTable(a);
+    let closed = document.createElement('img');
+    closed.style.position = 'absolute';
+    closed.style.top = '10px';
+    closed.style.left = 'calc(50% - 490px)';
+    closed.src = '/img/closed.png';
+    body.append(closed)
+    console.log(closed);
+}
+
+
 function notMoney() {
     if (table2.style.display !== 'none') {
         table2.style.display = 'none';
@@ -124,7 +158,6 @@ function notMoney() {
         notCh.innerHTML = str;
         notCh.style.display = 'block'
         notCh.style.position = 'relative'
-
         notCh.style.top = '25vh'
         notCh.style.background = 'red'
         classChange.append(notCh)

@@ -1,16 +1,18 @@
+price.value = 2;
+cash.value = 27;
+window.addEventListener('load', checkInput);
+
+
 btnCount.addEventListener('click', count);
 btnReset.onclick = reset;
-price.oninput = checkInput;
-cash.oninput = checkInput;
-
-notMoney()
+price.addEventListener('input', checkInput);
+cash.addEventListener('input', checkInput);
 
 function count() {
     let cid = makeArrayFromCiD();
 
     let result = checkCashRegister(price.value, cash.value, cid)
 
-    console.log(result.status);
     switch (result.status) {
         case 'OPEN':
             fillTable(result.change);
