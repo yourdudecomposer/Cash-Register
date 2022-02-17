@@ -1,6 +1,4 @@
-price.value = 2;
-cash.value = 27;
-window.addEventListener('load', checkInput);
+
 
 
 btnCount.addEventListener('click', count);

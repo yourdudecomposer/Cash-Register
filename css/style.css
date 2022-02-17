@@ -2,13 +2,13 @@
 .container {
     display: grid;
     grid-template:
-        "header header  header"10vh "cid prpay change"70vh "footer footer footer"20vh /1fr 25% 1fr;
+        "header header  header"10vh "cid prpay change"75vh "footer footer footer"15vh /1fr 25% 1fr;
 
 }
 
 header {
     grid-area: header;
-    
+
 }
 
 .cid {
@@ -28,9 +28,9 @@ footer {
 }
 
 
-header, .cid, .prpay, .change, footer {
+/* header, .cid, .prpay, .change, footer {
     border: 1px solid;
-}
+} */
 
 /* FONTS */
 
@@ -43,6 +43,8 @@ h2 {
 
 /* HEADER */
 header {
+    background: var(--first-color);
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,17 +59,25 @@ h1 {
 
 
 .cid, .change {
+    background: var(--second2-color);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.cid input {
+.cid td:nth-child(odd), .change td:nth-child(odd) {
+    background: var(--first2-color);
+}
+
+.cid input, .change td:nth-child(2) {
     font-size: .6rem;
     padding-left: 5px;
+    text-align: left;
+    background: white;
 }
 
 .cid td:nth-child(even) {
+    background: white;
     width: 50%;
 }
 
@@ -79,7 +89,10 @@ table {
     border-collapse: collapse;
     height: 85%;
     width: 90%;
+}
 
+th{
+    background: var(--first-color);
 }
 
 th, td {
@@ -90,6 +103,7 @@ th, td {
 }
 
 td input {
+    background: var(--first2-color);
     width: 100%;
     height: 100%;
 }
@@ -102,6 +116,7 @@ table input {
 /* PRICE PAY */
 
 .prpay {
+    background: var(--second2-color);
     display: flex;
     flex-direction: column;
 }
@@ -120,12 +135,14 @@ table input {
     height: 7vh;
     font-size: 0.6rem;
     padding-left: 5px;
+    border: none;
 }
 
 /* CHANGE */
 .change td:nth-child(even) {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     width: 50%;
+
 }
 
 
@@ -136,6 +153,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: var(--second-color);
 }
 
 footer button:nth-child(1) {
@@ -143,9 +161,11 @@ footer button:nth-child(1) {
     width: 20%;
     height: 10vh;
     font-size: 0.9em;
-    border-radius: 10px;
+    border-radius: 15px;
     pointer-events: none;
-     color: #ccc;
+    background: var(--first-color);
+    color: #ccc;
+    border: none;
 }
 
 footer button:nth-child(2) {
@@ -155,6 +175,17 @@ footer button:nth-child(2) {
     border-radius: 50%;
     padding: 17px;
     font-size: .7em;
-    background-color: red;
+    background-color: var(--third-color);
     border: none;
+}
+
+
+/* CLOSED  */
+
+.closed {
+    top: 2%;
+    left: 20%;
+    height: 96vh;
+    width: 60%;
+    filter: drop-shadow(5px 5px 5px rgb(90, 90, 90));
 }
