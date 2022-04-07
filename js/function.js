@@ -109,13 +109,29 @@ function reset() {
     table2.style.display = 'table';
     if (notCh) console.log(1232132);
 }
+
+
+function hexToRgbGrey(hex) {
+    var bigint = parseInt(hex, 16);
+    var r = ((bigint >> 16) & 255) * 0.299;
+    var g = ((bigint >> 8) & 255) * 0.587;
+    var b = (bigint & 255) * 0.114;
+    r = Math.round(r)
+    g = Math.round(g)
+    b = Math.round(b)
+    return r + "," + g + "," + b;
+}
+console.log(hexToRgbGrey('04859D'));
+
 function checkInput() {
     if (price.value !== '' && cash.value !== '') {
         btnCount.style.pointerEvents = 'initial';
         btnCount.style.color = '#000';
+        btnCount.style.background = '#04859D'
     } else {
         btnCount.style.pointerEvents = 'none';
         btnCount.style.color = '#ccc';
+        btnCount.style.background = '#'
     }
 }
 
@@ -125,7 +141,7 @@ function checkInput() {
 
 
 function fillTable(a) {
-console.log('fill');
+    console.log('fill');
     table2.style.display = 'table';
     for (let i = 0; i < changeOut.length; i++) {
         for (let k = 0; k < a.length; k++) {
@@ -151,15 +167,15 @@ function fillTableAndClose(a) {
 function notMoney() {
     console.log('not money');
     // if (table2.style.display !== 'none') {
-        table2.style.display = 'none';
-        let str = "<h2>There is No Change</h2>"
-        let notCh = document.createElement('div');
-        notCh.innerHTML = str;
-        notCh.style.display = 'block'
-        notCh.style.position = 'relative'
-        notCh.style.top = '25vh'
-        notCh.style.background = 'red'
-        classChange.append(notCh)
+    table2.style.display = 'none';
+    let str = "<h2>There is No Change</h2>"
+    let notCh = document.createElement('div');
+    notCh.innerHTML = str;
+    notCh.style.display = 'block'
+    notCh.style.position = 'relative'
+    notCh.style.top = '25vh'
+    notCh.style.background = 'red'
+    classChange.append(notCh)
     // }
 }
 
