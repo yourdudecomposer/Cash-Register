@@ -162,7 +162,6 @@ footer button:nth-child(1) {
     height: 10vh;
     font-size: 0.9em;
     border-radius: 15px;
-    pointer-events: none;
     background: var(--first-color);
     color: #ccc;
     border: none;

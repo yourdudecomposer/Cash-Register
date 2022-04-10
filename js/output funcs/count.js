@@ -1,14 +1,7 @@
-
-
-
-btnCount.addEventListener('click', count);
-btnReset.onclick = reset;
-price.addEventListener('input', checkInput);
-cash.addEventListener('input', checkInput);
-
-function count() {
+export default function count() {
+    console.log(432)
     let cid = makeArrayFromCiD();
-
+console.log(cid);
     let result = checkCashRegister(price.value, cash.value, cid)
 
     switch (result.status) {
