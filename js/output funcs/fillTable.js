@@ -1,5 +1,7 @@
+import { table2, changeOut } from "../set id and get const/constans.js";
+
+
 export default function fillTable(a) {
-    console.log('fill');
     table2.style.display = 'table';
     for (let i = 0; i < changeOut.length; i++) {
         for (let k = 0; k < a.length; k++) {

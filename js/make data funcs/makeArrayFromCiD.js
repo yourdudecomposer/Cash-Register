@@ -1,3 +1,5 @@
+import { cashIn } from "../set id and get const/constans.js";
+
 export default function makeArrayFromCiD() {
     let cid = [["PENNY"], ["NICKEL"], ["DIME"], ["QUARTER"], ["ONE"], ["FIVE"], ["TEN"], ["TWENTY"], ["ONE HUNDRED"]];
     cid.map((el, i) => {

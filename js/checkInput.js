@@ -1,4 +1,4 @@
-import { price, btnCount, cash } from '../constans.js';
+import {  btnCount } from './set id and get const/constans.js';
 
 export default function checkInput() {
     if (price.value && cash.value) {
@@ -9,6 +9,5 @@ export default function checkInput() {
         btnCount.style.pointerEvents = 'none';
         btnCount.style.color = '#aaa';
         btnCount.style.background = '#666';
-
     }
 } 

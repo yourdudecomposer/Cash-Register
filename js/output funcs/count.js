@@ -1,8 +1,14 @@
+import { cash, price } from "../set id and get const/constans.js";
+import makeArrayFromCiD from "../make data funcs/makeArrayFromCiD.js";
+import checkCashRegister from "../make data funcs/checkCashRegister.js";
+import fillTable from "./fillTable.js";
+import fillTableAndClose from "./fillTableAndClose.js";
+
 export default function count() {
-    console.log(432)
     let cid = makeArrayFromCiD();
-console.log(cid);
     let result = checkCashRegister(price.value, cash.value, cid)
+
+    console.log(result);
 
     switch (result.status) {
         case 'OPEN':
