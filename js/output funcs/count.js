@@ -3,8 +3,10 @@ import makeArrayFromCiD from "../make data funcs/makeArrayFromCiD.js";
 import checkCashRegister from "../make data funcs/checkCashRegister.js";
 import fillTable from "./fillTable.js";
 import fillTableAndClose from "./fillTableAndClose.js";
+import notMoney from "./notMoney.js";
 
 export default function count() {
+    
     let cid = makeArrayFromCiD();
     let result = checkCashRegister(price.value, cash.value, cid)
 

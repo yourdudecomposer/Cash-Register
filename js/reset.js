@@ -10,5 +10,8 @@ export default function reset() {
     cash.value = '';
     checkInput()
     table2.style.display = 'table';
-    if (typeof notCh !== 'undefined') console.log(1232132);
+    if (document.querySelector('.change div')) {
+        let notCh = document.querySelector('.change div');
+        notCh.parentNode.removeChild(notCh)
+    }
 }
