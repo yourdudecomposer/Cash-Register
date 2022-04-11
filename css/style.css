@@ -2,7 +2,10 @@
 .container {
     display: grid;
     grid-template:
-        "header header  header"10vh "cid prpay change"75vh "footer footer footer"15vh /1fr 25% 1fr;
+        "header header  header" 10vh 
+        "cid prpay change" 75vh 
+        "footer footer footer" 15vh 
+        /1fr 25% 1fr;
 
 }
 
@@ -158,12 +161,10 @@ footer {
 
 footer button:nth-child(1) {
     text-transform: uppercase;
-    width: 20%;
-    height: 10vh;
+    width: 17%;
+    height: 8vh;
     font-size: 0.9em;
     border-radius: 15px;
-    background: var(--first-color);
-    color: #ccc;
     border: none;
 }
 

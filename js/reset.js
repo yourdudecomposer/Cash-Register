@@ -14,4 +14,8 @@ export default function reset() {
         let notCh = document.querySelector('.change div');
         notCh.parentNode.removeChild(notCh)
     }
+    if (document.querySelector('.closed')) {
+        let cl = document.querySelector('.closed');
+        cl.parentNode.removeChild(cl)
+    }
 }
