@@ -1,0 +1,74 @@
+header {
+    grid-area: header;
+
+}
+
+.cid {
+    grid-area: cid;
+}
+
+.prpay {
+    grid-area: prpay;
+}
+
+.change {
+    grid-area: change;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+.container {
+    display: grid;
+
+}
+
+.container {
+    grid-template:
+        "header" 7vh 
+        "cid" 85vh 
+        "prpay" 50vh 
+        "footer" 7vh 
+        "change" 85vh 
+}
+
+@media (min-width: 576px) {
+    .container {
+        grid-template:
+            "header header  header" 10vh 
+            "cid prpay change" 75vh 
+            "footer footer footer" 15vh 
+            /1fr 25% 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template:
+            "header header" 15vh 
+            "cid prpay" 75vh
+            "footer footer" 15vh 
+            "change change" 75vh 
+            /1fr 25%;
+    }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1800px) {
+    .container {
+        grid-template:
+            "header header  header" 10vh 
+            "cid prpay change" 75vh 
+            "footer footer footer" 15vh 
+            /1fr 25% 1fr;
+    }
+}

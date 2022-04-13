@@ -1,34 +1,6 @@
+/* FONTS */
+
 /* GRID */
-.container {
-    display: grid;
-    grid-template:
-        "header header  header" 10vh 
-        "cid prpay change" 75vh 
-        "footer footer footer" 15vh 
-        /1fr 25% 1fr;
-
-}
-
-header {
-    grid-area: header;
-
-}
-
-.cid {
-    grid-area: cid;
-}
-
-.prpay {
-    grid-area: prpay;
-}
-
-.change {
-    grid-area: change;
-}
-
-footer {
-    grid-area: footer;
-}
 
 
 /* header, .cid, .prpay, .change, footer {
