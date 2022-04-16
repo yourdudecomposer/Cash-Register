@@ -1,6 +1,5 @@
 header {
     grid-area: header;
-
 }
 
 .cid {
@@ -22,16 +21,16 @@ footer {
 
 .container {
     display: grid;
-
+    height: 90vh;
+    min-height: 734px;
 }
 
 
 
 .container {
     grid-template:
-        "header header  header" 8vh 
-        "cid prpay change" 80vh 
-        "footer footer footer" 12vh 
+        "header header  header" 8%
+        "cid prpay change" 92%
         /1fr 25% 1fr;
 }
 

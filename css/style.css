@@ -62,7 +62,7 @@ h1 {
 
 table {
     border-collapse: collapse;
-    height: 85%;
+    height: 80%;
     width: 90%;
 }
 
@@ -102,22 +102,7 @@ table input {
 
 
 /* FOOTER */
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: var(--second-color);
-}
 
-footer button:nth-child(1) {
-    text-transform: uppercase;
-    width: 17%;
-    height: 8vh;
-    font-size: 0.9em;
-    border-radius: 15px;
-    border: none;
-}
 
 footer button:nth-child(2) {
     position: fixed;
