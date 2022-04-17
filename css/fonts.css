@@ -2,16 +2,22 @@
 
 *{font-size:50px;}
 
+h2 {
+    font-size: .8em;
+}
+h1 {
+    font-size: 1em;
+}
 @media (max-width: 1399.98px) {
-    *{font-size:30px;}
+    *{font-size:35px;}
  }
 
  @media (max-width: 1199.98px) {
-     *{font-size:25px;}
+     *{font-size:32px;}
 }
 
 @media (max-width: 991.98px) {
-    *{font-size:23px;}
+    *{font-size:26px;}
 }
 
 @media (max-width: 767.98px) { 
