@@ -39,5 +39,11 @@ footer button:nth-child(1) {
 }
 
 @media (max-width: 575.98px) {
-   
+    footer{
+height: 50px;
+    }
+    footer button:nth-child(1) {
+height: 80%;
+font-size: 0.5em;
+    }
 }
