@@ -28,3 +28,7 @@ h1 {
 @media (max-width: 575.98px) {
     *{font-size:40px;}
 }
+
+@media (max-width: 415px) {
+    *{font-size:30px;}
+}

@@ -4,7 +4,28 @@ footer button:nth-child(2) {
     bottom: 5%;
     border-radius: 50%;
     padding: 10px;
-    font-size: .6em;
+    font-size: .7em;
     background-color: var(--third-color);
     border: none;
+}
+
+
+@media (max-width: 1399.98px) {
+
+}
+
+@media (max-width: 1199.98px) {
+
+}
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 767.98px) { 
+
+}
+
+@media (max-width: 575.98px) {
+   
 }
