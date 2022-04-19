@@ -9,3 +9,4 @@ export default function fillTableAndClose(a) {
     closed.src = '/img/closed.png';
     body.append(closed)
 }
+
