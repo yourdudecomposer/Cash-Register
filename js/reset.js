@@ -1,10 +1,11 @@
 
-import { price, cash, cashIn, table2 } from "./set id and get const/constans.js";
+import { price, cash, cashIn, table2, changeOut } from "./set id and get const/constans.js";
 import checkInput from "./checkInput.js";
 
 export default function reset() {
     for (let i = 0; i < cashIn.length; i++) {
         cashIn[i].value = '';
+        changeOut[i].innerHTML = '';
     }
     price.value = '';
     cash.value = '';
